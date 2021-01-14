@@ -94,7 +94,7 @@ class PublicUserApiTests(TestCase):
         self.assertNotIn('token', response.data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-    def test_create_token_missing_fiels(self):
+    def test_create_token_missing_fields(self):
         """Test that email and password are required"""
 
         response = self.client.post(TOKEN_URL, {
